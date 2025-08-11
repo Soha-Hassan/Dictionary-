@@ -1,0 +1,72 @@
+:root {
+    --primary: #2563eb;
+    --secondary: #f97316;
+    --dark: #1e293b;
+    --light: #f8fafc;
+    --accent: #7c3aed;
+    --hover: #1d4ed8;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
+    min-height: 100vh;
+    background-image: 
+        linear-gradient(90deg, rgba(200,200,255,0.1) 1px, transparent 1px),
+        linear-gradient(rgba(200,200,255,0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-attachment: fixed;
+}
+
+@media (max-width: 768px) {
+    .dynamic-quote-container {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+    
+    #searchInput {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+.word-card {
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-out;
+    background-color: rgba(255,255,255,0.95);
+    backdrop-filter: blur(2px);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+.word-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.phonetic {
+    font-family: 'Courier New', monospace;
+}
+
+.tab.active {
+    border-bottom: 3px solid var(--primary);
+}
+
+#historyTab:hover, #favoritesTab:hover {
+    opacity: 0.9;
+}

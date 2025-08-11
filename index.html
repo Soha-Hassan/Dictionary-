@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Dictionary App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-blue-100 to-purple-50">
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <header class="mb-8 text-center">
+            <div class="flex justify-center mb-4">
+                <div class="dynamic-quote-container bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-lg max-w-md mx-auto transition-all duration-300 hover:shadow-xl">
+                    <span id="dailyQuote" class="text-indigo-700 italic font-medium text-center"></span>
+                </div>
+            </div>
+            <h1 class="text-4xl font-bold text-indigo-600 mb-2">LexiQuest Dictionary</h1>
+            <p class="text-gray-600">Discover, learn and save words with ease</p>
+        </header>
+
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+            <div class="flex flex-col md:flex-row gap-4">
+                <input type="text" id="searchInput" placeholder="Type a word (try: synonyms:word or rhymes:word)" 
+                title="Advanced search: Try 'synonyms:word' or 'rhymes:word'" 
+                       class="flex-grow px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition">
+                <button id="searchBtn" 
+                        class="px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-all duration-200 transform hover:scale-[1.02] active:scale-95">
+                    Search
+                </button>
+            </div>
+            <div class="flex justify-center mt-4 space-x-8">
+                <button id="historyTab" class="tab px-4 py-2 text-indigo-600 font-medium">History</button>
+                <button id="favoritesTab" class="tab px-4 py-2 text-amber-500 font-medium">Favorites</button>
+            </div>
+        </div>
+
+        <div id="loadingSpinner" class="hidden text-center py-12">
+            <div class="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-indigo-600"></div>
+            <p class="mt-4 text-gray-600">Searching dictionary...</p>
+        </div>
+
+        <div id="resultsContainer" class="space-y-6 hidden">
+            <!-- Word details will be displayed here -->
+        </div>
+
+        <div id="historyContainer" class="hidden">
+            <h2 class="text-2xl font-bold mb-4 text-indigo-600">Search History</h2>
+            <div id="historyList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3"></div>
+        </div>
+
+        <div id="favoritesContainer" class="hidden">
+            <h2 class="text-2xl font-bold mb-4 text-amber-500">Favorite Words</h2>
+            <div id="favoritesList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
